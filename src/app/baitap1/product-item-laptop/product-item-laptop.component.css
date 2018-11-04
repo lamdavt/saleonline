@@ -1,0 +1,22 @@
+.customize {
+    margin-left: 8px !important;
+}
+.modal-body {
+    display: flex;
+}
+.name {
+    width: 30%;
+    text-align: center;
+}
+.des {
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.price {
+    width: 20%;
+    text-align: center;
+}
+.modal-content {
+    margin-top: 65%;
+}

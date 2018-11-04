@@ -1,0 +1,44 @@
+<section id="smartphone" class="container-fluid pt-5 pb-5">
+    <h1 class="text-white text-center">BEST SMARTPHONE</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-lg-3" *ngFor="let smartphone of arrSmartPhone; let i = index">
+            <div class="container">
+                <div class="card bg-light" style="width:300px">
+                    <img class="card-img-top" src="assets/img/{{smartphone.img}}" alt="Card image" style="max-width:100%; height: 250px;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title text-center">{{smartphone.name}}</h4>
+                        <p *ngIf="!status" class="card-text">{{smartphone.des}}</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target=#5 (click)="selectItem(i)">Detail</button>
+                        <button *ngIf="status === true; else ShowElse" class="btn btn-danger customize" (click)="ShowDes()">Show
+                            Des</button>
+                        <ng-template #ShowElse>
+                            <button class="btn btn-danger customize" (click)="ShowDes()">Hide Des</button>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id=5 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Chi Tiết</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="name">{{arrSmartPhone[index1].name}}</div>
+                <div class="des">{{arrSmartPhone[index1].des}}</div>
+                <div class="price">{{arrSmartPhone[index1].price}}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

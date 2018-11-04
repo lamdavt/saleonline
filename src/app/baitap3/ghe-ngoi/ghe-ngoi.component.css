@@ -1,0 +1,12 @@
+.ghe {
+    width: 50px;
+    height: 50px;
+}
+.dadat {
+    background-color: red;
+}
+.chuadat {
+    border:1px solid green;
+    cursor: pointer;
+    border-radius: 5px
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <h3>PLEASE BOOKING TICKET</h3>
+            <app-ghe-ngoi #t *ngFor="let ghe of DanhSachGhe" (eventDatGhe)='DatGhe($event)' [Ghe]="ghe"></app-ghe-ngoi>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <br>
+            <br>
+            <p>Ghế: <span *ngFor="let ghe of DanhSachGheDaDat; let i = index"><span *ngIf="i != 0">, </span>{{ghe.TenGhe}}</span></p>
+            <p>Tổng tiền: {{Tien}} đ</p>
+            <button type="button" class="btn btn-success" [disabled]="!checkDatve" (click)="BookGhe()">Đặt vé</button>
+        </div>
+    </div>
+</div>
+
+
+
